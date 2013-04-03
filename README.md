@@ -23,6 +23,7 @@ require('express-dynamic-router').register(app);
 
 ##Runing tests
 <pre>
+mocha --reporter spec router.js
 </pre>
 
 
