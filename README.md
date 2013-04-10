@@ -15,9 +15,17 @@ npm install express-dynamic-router
 ##Usage
 
 express_root/app.js
+
 <pre>
 app.get("/" routes.index);
 require('express-dynamic-router').register(app);
+</pre>
+
+
+<b>If you change routes dir, please write like as below</b>
+<pre>
+app.get("/" routes.index);
+require('express-dynamic-router').setRoutesDir("path-to-your-routes").register(app);
 </pre>
 
 
