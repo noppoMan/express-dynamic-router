@@ -7,7 +7,7 @@
     "dynamic",
     "router"
   ],
-  "version": "0.1.4",
+  "version": "0.1.5",
   "main": "lib/express-dynamic-router.js",
   "dependencies": {},
   "devDependencies": {
