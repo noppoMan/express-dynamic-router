@@ -36,4 +36,4 @@ mocha --reporter spec router.js
 
 
 ##License
-BSD
+MIT
