@@ -7,7 +7,7 @@
     "dynamic",
     "router"
   ],
-  "version": "0.1.6",
+  "version": "0.2.0",
   "main": "lib/express-dynamic-router.js",
   "dependencies": {},
   "devDependencies": {
@@ -31,5 +31,5 @@
   "directories": {
     "test": "test"
   },
-  "license": "BSD"
+  "license": "MIT"
 }
