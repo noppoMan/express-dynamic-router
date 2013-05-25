@@ -1,5 +1,10 @@
 {
-  "author": "Yuki Takei <yuki@miketokyo.com>",
+  "author": 
+  {
+    "name" : "noppoMan"
+    , "email" : "yuki@miketokyo.com"
+    , "url" : "http://miketokyo.com"
+  },
   "name": "express-dynamic-router",
   "description": "provide dynamic routing system for express",
   "keywords": [
