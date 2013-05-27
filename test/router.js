@@ -6,19 +6,28 @@ var app, req;
 //setup
 beforeEach(function() {
   app = express();
-  expressDynamicRouter.setRoutesDir('../test/routes');
+  expressDynamicRouter.setRoutesDir(__dirname + '/routes');
 });
 
 
-describe('Should setable costome routes dir', function() {
-  it('Should result value of expressDynamicRouter.getRoutesDir() equals expected value', function() {
-    expressDynamicRouter.getRoutesDir().should.equal('../test/routes');
+describe('expressDynamicRouter.setRoutesDir()', function() {
+  it('Should result value of expressDynamicRouter.getRoutesDir() equals ' + __dirname + '/routes', function() {
+    expressDynamicRouter.getRoutesDir().should.equal(__dirname + '/routes');
   });
 });
 
 
-describe('should registerd routes', function() {
-  it('Should results value of app.routes.get equals expected value', function() {
+describe('expressDynamicRouter.route()', function() {
+  it('Should results value of app.routes.get[0].path equals /', function() {
+    expressDynamicRouter
+    .route(require(__dirname + '/routes/index').index)
+    .register(app);
+    app.routes.get[0].path.should.equal('/');
+  });
+});
+
+describe('expressDynamicRouter.register()', function() {
+  it('Should results value of app.routes.get contains path,method,callbaks,keys,regexp', function() {
     expressDynamicRouter.register(app);
     app.routes.get[0].should.have.property('path');
     app.routes.get[0].should.have.property('method');

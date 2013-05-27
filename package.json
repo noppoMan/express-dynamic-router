@@ -12,9 +12,11 @@
     "dynamic",
     "router"
   ],
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "lib/express-dynamic-router.js",
-  "dependencies": {},
+  "dependencies": {
+    "underscore" : "*"
+  },
   "devDependencies": {
     "express": "3.0.X",
     "supertest": "*",
