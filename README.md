@@ -10,7 +10,7 @@ email : yuki@miketokyo.com
 ##Overseas
 express-dynamic-router provide you the auto routing system for express.
 
-<b>You don't need to write routing codes like below</b>
+<b>You don't need to write routing codes written in express docs</b>
 <pre>
 app.get("hellow/world", hellow.world);
 app.post("hellow/world", hellow.world);
@@ -18,9 +18,11 @@ app.put("hellow/world", hellow.world);
 app.delete("hellow/world", hellow.world);
 </pre>
 
-<b>You only have to write one line code like bellow</b>
+<b>You only have to write easy code like bellow</b>
 <pre>
-require('express-dynamic-router').register(app);
+require('express-dynamic-router')
+.route(require('routes/index').index)
+.register(app);
 </pre>
 
 ##Instalation
@@ -30,24 +32,35 @@ npm install express-dynamic-router
 
 ##Usage
 
-express_root/app.js
-
+express/app.js
 <pre>
-app.get("/" routes.index);
-require('express-dynamic-router').register(app);
+app.configure('development', function(){
+  app.use(express.errorHandler());
+});
+
+//use express-dynamic-router
+require('express-dynamic-router')
+.route(require('routes/index').index) // Set action for route
+.register(app);
+
+http.createServer(app).listen(app.get('port'), function(){
+  console.log("Express server listening on port " + app.get('port'));
+});
 </pre>
 
 
-<b>If you change routes dir, please write like as below</b>
+<b>If you change routes dir, You only have to add setRoutesDir(path-your-route-dir) on method chain</b>
 <pre>
-app.get("/" routes.index);
-require('express-dynamic-router').setRoutesDir("path-to-your-routes").register(app);
+require('express-dynamic-router')
+.route(require('routes/index').index)
+.setRoutesDir("path-to-your-routes")
+.register(app);
 </pre>
 
 
 ##Runing tests
 <pre>
-mocha --reporter spec router.js
+mocha test/router.js
 </pre>
 
 
