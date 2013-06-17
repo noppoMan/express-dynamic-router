@@ -21,7 +21,7 @@ app.delete("hellow/world", hellow.world);
 <b>You only have to write easy code like bellow</b>
 <pre>
 require('express-dynamic-router')
-.route(require('routes/index').index)
+.index(require('routes/index').index)
 .register(app);
 </pre>
 
