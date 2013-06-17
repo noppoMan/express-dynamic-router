@@ -17,10 +17,10 @@ describe('expressDynamicRouter.setRoutesDir()', function() {
 });
 
 
-describe('expressDynamicRouter.route()', function() {
+describe('expressDynamicRouter.index()', function() {
   it('Should results value of app.routes.get[0].path equals /', function() {
     expressDynamicRouter
-    .route(require(__dirname + '/routes/index').index)
+    .index(require(__dirname + '/routes/index').index)
     .register(app);
     app.routes.get[0].path.should.equal('/');
   });
