@@ -40,7 +40,7 @@ app.configure('development', function(){
 
 //use express-dynamic-router
 require('express-dynamic-router')
-.route(require('routes/index').index) // Set action for route
+.index(require('routes/index').index) // Set action for index
 .register(app);
 
 http.createServer(app).listen(app.get('port'), function(){
@@ -52,7 +52,7 @@ http.createServer(app).listen(app.get('port'), function(){
 <b>If you change routes dir, You only have to add setRoutesDir(path-your-route-dir) on method chain</b>
 <pre>
 require('express-dynamic-router')
-.route(require('routes/index').index)
+.index(require('routes/index').index)
 .setRoutesDir("path-to-your-routes")
 .register(app);
 </pre>
