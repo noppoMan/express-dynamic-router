@@ -26,13 +26,41 @@ describe('expressDynamicRouter.index()', function() {
   });
 });
 
+
+describe('expressDynamicRouter.ignore()', function() {
+  it('Should ignore ignoreTest method', function() {
+
+    expressDynamicRouter
+    .index(require(__dirname + '/routes/index').index)
+    .ignore({
+      '/*' : ['ignoreTest']
+    })
+    .register(app);
+
+    var isMatch = false;
+    for(var i in app.routes.get){
+        if(app.routes.get[i].path.match(/ignoreTest/)){
+          isMatch = true;
+        }
+    }
+    
+    isMatch.should.not.be.ok
+  });
+});
+
+
 describe('expressDynamicRouter.register()', function() {
   it('Should results value of app.routes.get contains path,method,callbaks,keys,regexp', function() {
     expressDynamicRouter.register(app);
-    app.routes.get[0].should.have.property('path');
-    app.routes.get[0].should.have.property('method');
-    app.routes.get[0].should.have.property('callbacks');
-    app.routes.get[0].should.have.property('keys');
-    app.routes.get[0].should.have.property('regexp');
+    var methods = ['get', 'post', 'put', 'delete'];
+    for(var i in methods){
+      var method = methods[i];
+      app.routes.should.have.property(method);
+      app.routes[method][0].should.have.property('path');
+      app.routes[method][0].should.have.property('method');
+      app.routes[method][0].should.have.property('callbacks');
+      app.routes[method][0].should.have.property('keys');
+      app.routes[method][0].should.have.property('regexp');
+    }
   });
 });
