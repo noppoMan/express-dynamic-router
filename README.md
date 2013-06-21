@@ -58,6 +58,51 @@ require('express-dynamic-router')
 </pre>
 
 
+##Api Reference
+
+### setRoutesDir
+Set path to your routes dir (First, dynamic-router browse express/routes, if you don't use this method.)
+<pre>
+dynamicRouter.setRoutesDir(string path-to-your-custome-routes-dir)
+</pre>
+
+### getRoutesDir
+Get your routes dir string.
+<pre>
+dynamicRouter.getRoutesDir()
+</pre>
+
+
+### index
+Set index action (accessible http://your-domain.com/)
+<pre>
+dynamicRouter.index(function indexAction)
+</pre>
+
+
+### ignore
+Set ignore actions which you not want to register.
+<pre>
+dynamicRouter.ignore(function indexAction)
+</pre>
+
+#### ■usage
+<pre>
+dynamicRouter
+.ignore({
+  '*/' : ['hogehoge', 'fugafuga'], // * is applyed to all routes
+  'user' : ['initialize', 'beforeRenderHook']
+})
+</pre>
+
+
+### register
+Register all routes in your routes dir except for actions which are ignored.
+<pre>
+dynamicRouter.register(object expressApp)
+</pre>
+
+
 ##Runing tests
 <pre>
 mocha test/router.js
