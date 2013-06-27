@@ -23,7 +23,7 @@
     "node": "*"
   },
   "scripts": {
-    "test": "mocha test/router.js"
+    "test": "mocha --reporter spec ./test/router.js"
   },
   "repository": {
     "type": "git",
