@@ -1,11 +1,14 @@
 express-dynamic-router
 ======================
 
+[![Build Status](https://travis-ci.org/noppoMan/express-dynamic-router.png?branch=master)](https://travis-ci.org/noppoMan/express-dynamic-router)
+
 #### *Dynamic routing system for express.*
 
 
 author : Yuki Takei(MikeTOKYO)  
 email : yuki@miketokyo.com  
+
 
 ##Overseas
 express-dynamic-router provide you the auto routing system for express.
