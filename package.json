@@ -16,7 +16,7 @@
   "version": "0.2.6",
   "main": "lib/express-dynamic-router.js",
   "dependencies": {
-    "underscore": "*"
+    "underscore": "1.4.4"
   },
   "devDependencies": {
     "express": "3.0.X",
