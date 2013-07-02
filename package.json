@@ -1,5 +1,11 @@
 {
   "author": "noppoMan <yuki@miketokyo.com> (http://miketokyo.com)",
+  "contributors": [
+    {
+      "name": "noppoman",
+      "email": "yuki@miketokyo.com"
+    }
+  ],
   "name": "express-dynamic-router",
   "description": "provide dynamic routing system for express",
   "keywords": [
@@ -7,7 +13,7 @@
     "dynamic",
     "router"
   ],
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "lib/express-dynamic-router.js",
   "dependencies": {
     "underscore": "*"
