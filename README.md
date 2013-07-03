@@ -86,7 +86,7 @@ dynamicRouter.index(function indexAction)
 ### ignore
 Set ignore actions which you not want to register.
 <pre>
-dynamicRouter.ignore(function indexAction)
+dynamicRouter.ignore(object ignoreAction)
 </pre>
 
 #### ■usage
