@@ -2,6 +2,7 @@ express-dynamic-router
 ======================
 
 [![Build Status](https://travis-ci.org/noppoMan/express-dynamic-router.png?branch=master)](https://travis-ci.org/noppoMan/express-dynamic-router)
+[![NPM version](https://badge.fury.io/js/express-dynamic-router.png)](http://badge.fury.io/js/express-dynamic-router)
 
 #### *Dynamic routing system for express.*
 
