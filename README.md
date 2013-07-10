@@ -94,8 +94,8 @@ dynamicRouter.ignore(object ignoreAction)
 <pre>
 dynamicRouter
 .ignore({
-  '*/' : ['hogehoge', 'fugafuga'], // * is applyed to all routes
-  'user' : ['initialize', 'beforeRenderHook']
+  '/*' : ['hogehoge', 'fugafuga'], // apply ignoreing to all routes.
+  'user' : ['initialize', 'beforeRenderHook'] // apply ignoreing to user.
 })
 </pre>
 
