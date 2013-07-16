@@ -64,6 +64,13 @@ require('express-dynamic-router')
 
 ##Api Reference
 
+
+### register
+Register all routes in your routes dir except for actions which are ignored.
+<pre>
+dynamicRouter.register(object expressApp)
+</pre>
+
 ### setRoutesDir
 Set path to your routes dir (First, dynamic-router browse express/routes, if you don't use this method.)
 <pre>
@@ -84,6 +91,24 @@ dynamicRouter.index(function indexAction)
 </pre>
 
 
+### applyOnly
+Register only routes which are given arguments.
+<pre>
+dynamicRouter.applyOnly(['routes1', '....'])
+</pre>
+
+#### ■usage
+<pre>
+dynamicRouter
+.applyOnly(['user', 'account'])
+})
+.register('app);
+# GET   /user/index   -> 200 OK
+# POST  /account/save -> 201 Created
+# GET   /mypage/index -> 404 Not Found
+</pre>
+
+
 ### ignore
 Set ignore actions which you not want to register.
 <pre>
@@ -97,13 +122,11 @@ dynamicRouter
   '/*' : ['hogehoge', 'fugafuga'], // apply ignoreing to all routes.
   'user' : ['initialize', 'beforeRenderHook'] // apply ignoreing to user.
 })
-</pre>
-
-
-### register
-Register all routes in your routes dir except for actions which are ignored.
-<pre>
-dynamicRouter.register(object expressApp)
+.register('app);
+# GET   /user/hogehoge    -> 404 Not Found
+# POST  /account/fugafuga -> 404 Not Found
+# GET   /user/initialize  -> 404 Not Found
+# GET   /user/list        -> 200 OK
 </pre>
 
 
