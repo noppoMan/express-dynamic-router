@@ -11,7 +11,7 @@ author : Yuki Takei(MikeTOKYO)
 email : yuki@miketokyo.com  
 
 
-##Overseas
+## Overseas
 express-dynamic-router provide you the auto routing system for express.
 
 <b>You don't need to write routing codes written in express docs</b>
@@ -29,12 +29,12 @@ require('express-dynamic-router')
 .register(app);
 </pre>
 
-##Instalation
+## Instalation
 <pre>
 npm install express-dynamic-router
 </pre>
 
-##Usage
+## Usage
 
 express/app.js
 <pre>
@@ -62,7 +62,7 @@ require('express-dynamic-router')
 </pre>
 
 
-##Api Reference
+## Api Reference
 
 
 ### register
@@ -130,11 +130,11 @@ dynamicRouter
 </pre>
 
 
-##Runing tests
+## Runing tests
 <pre>
 mocha test/router.js
 </pre>
 
 
-##License
+## License
 MIT
